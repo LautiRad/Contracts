@@ -29,7 +29,7 @@ const pages = [
   { name: "Solidity", url: "./solidity" }
 ];
 
-const AppBarCC = () => {
+const NavBar = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
 
   const handleOpenNavMenu = (event) => {
@@ -49,6 +49,23 @@ const AppBarCC = () => {
       <AppBar position="static">
         <Container maxWidth="xl">
           <Toolbar disableGutters>
+            <Typography
+                variant="h6"
+                noWrap
+                component="a"
+                href="/"
+                sx={{
+                  mr: 2,
+                  display: { xs: "flex", md: "flex" },
+                  fontFamily: "monospace",
+                  fontWeight: 700,
+                  letterSpacing: ".3rem",
+                  color: "inherit",
+                  textDecoration: "none",
+                }}
+              >
+              Solidity
+              </Typography>
             <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" }, justifyContent: 'end'}}>
               <IconButton
                 size="large"
@@ -60,35 +77,34 @@ const AppBarCC = () => {
               >
               <MenuIcon />
               </IconButton>
-              <Menu
-                id="menu-appbar"
-                anchorEl={anchorElNav}
-                anchorOrigin={{
-                  vertical: "bottom",
-                  horizontal: "right",
-                }}
-                keepMounted
-                transformOrigin={{
-                  vertical: "top",
-                  horizontal: "left",
-                }}
-                open={Boolean(anchorElNav)}
-                onClose={handleCloseNavMenu}
-                sx={{
-                  display: { xs: "block", md: "none" },
-                }}
-              >
-                {pages.map((page, index) => (
-                  <MenuItem key={index} onClick={handleCloseNavMenu}>
-                    <Link href={page.url}>
-                      <Typography textAlign="center" textTransform="capitalize">
-                        {page.name}
-                      
-                      </Typography>
-                    </Link>
-                  </MenuItem>
-                ))}
-              </Menu>
+                <Menu
+                  id="menu-appbar"
+                  anchorEl={anchorElNav}
+                  anchorOrigin={{
+                    vertical: "bottom",
+                    horizontal: "right",
+                  }}
+                  keepMounted
+                  transformOrigin={{
+                    vertical: "top",
+                    horizontal: "left",
+                  }}
+                  open={Boolean(anchorElNav)}
+                  onClose={handleCloseNavMenu}
+                  sx={{
+                    display: { xs: "block", md: "none"}
+                  }}
+                >
+                  {pages.map((page, index) => (
+                    <MenuItem key={index} onClick={handleCloseNavMenu} color="black">
+                      <Link href={page.url}>
+                        <Button variant="contained" sx={{ my: 1, color: "white", display: "block", textTransform: 'capitalize', mr: 1}}>
+                          {page.name}
+                        </Button>
+                      </Link>
+                    </MenuItem>
+                  ))}
+                </Menu>
             </Box>
             
             <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex", paddingLeft: '3em' }, justifyContent: 'end', alignItems: 'center'}}>
@@ -96,9 +112,9 @@ const AppBarCC = () => {
                 <Button
                   key={index}
                   onClick={handleCloseNavMenu}
-                  sx={{ my: 2, color: "white", display: "block", textTransform: 'capitalize', mr: 1 }}
+                  sx={{ my: 2, color: "white", display: "block", textTransform: 'capitalize', mr: 2}}
                 >
-                      <Typography textAlign="center" onClick={()=>redirect(page.url)} fontSize= '14px'>
+                      <Typography textAlign="center" onClick={()=>redirect(page.url)} fontSize= '16px'>
                         {page.name}
                       
                       </Typography>
@@ -111,4 +127,4 @@ const AppBarCC = () => {
     </ThemeProvider>
   );
 };
-export default AppBarCC;
+export default NavBar;

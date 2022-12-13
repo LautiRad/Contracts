@@ -2,9 +2,7 @@ import type { AppProps } from 'next/app'
 import { ThemeProvider, createTheme } from '@mui/material/styles'
 import CssBaseline from '@mui/material/CssBaseline'
 import { useState } from 'react'
-import Navbar from '../components/Navbar'
-import Bar from '../components/bar'
-import AppBarCC from '../components/AppBarCC'
+import NavBar from '../components/AppBar'
 import Switch from '@mui/material/Switch'
 
 export default function App({ Component, pageProps }: AppProps) {
@@ -20,9 +18,7 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <ThemeProvider theme={darkTheme}>
         <CssBaseline />
-          <Bar />
-          <Navbar/>
-          <AppBarCC/>
+          <NavBar/>
           <Component {...pageProps} />
           <Switch {...label} defaultChecked 
           checked={darkMode}
