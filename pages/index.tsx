@@ -7,7 +7,7 @@ export default function Home() {
       <Head>
         <title>Solidity</title>
         <meta name="description" content="Solidity" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/FaviconBookmark.png" />
       </Head>
       <main>
         <div>
