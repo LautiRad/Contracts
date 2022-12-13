@@ -96,9 +96,9 @@ const NavBar = () => {
                   }}
                 >
                   {pages.map((page, index) => (
-                    <MenuItem key={index} onClick={handleCloseNavMenu} color="black">
+                    <MenuItem key={index} onClick={handleCloseNavMenu}>
                       <Link href={page.url}>
-                        <Button variant="contained" sx={{ my: 1, color: "white", display: "block", textTransform: 'capitalize', mr: 1}}>
+                        <Button variant="contained" sx={{ my: 0, color: "white", display: "block", textTransform: 'capitalize', mr: 0}}>
                           {page.name}
                         </Button>
                       </Link>
