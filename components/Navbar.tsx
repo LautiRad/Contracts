@@ -63,36 +63,6 @@ const Navbar = () => {
                 textDecoration: "none",
               }}
             >Solidity</Typography>
-            <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "flex" }}}>
-              <Menu
-                id="menu-appbar"
-                anchorEl={anchorElNav}
-                anchorOrigin={{
-                  vertical: "bottom",
-                  horizontal: "right",
-                }}
-                keepMounted
-                transformOrigin={{
-                  vertical: "top",
-                  horizontal: "left",
-                }}
-                open={Boolean(anchorElNav)}
-                onClose={handleCloseNavMenu}
-                sx={{
-                  display: { xs: "block", md: "none" },
-                }}
-              >
-                {pages.map((page, index) => (
-                  <MenuItem key={index} onClick={handleCloseNavMenu}>
-                    <Link href={page.url}>
-                      <Typography textTransform="capitalize">
-                        {page.name}
-                      </Typography>
-                    </Link>
-                  </MenuItem>
-                ))}
-              </Menu>
-            </Box>
             <Box sx={{ flexGrow: 1, display: { paddingLeft: '3em' }, justifyContent: 'end'}}>
               {pages.map((page, index) => (
                 <Button
@@ -106,6 +76,7 @@ const Navbar = () => {
                 </Button>
               ))}
             </Box>
+            <Button variant="outlined">Outlined</Button>
           </Toolbar>
         </Container>
       </AppBar>
